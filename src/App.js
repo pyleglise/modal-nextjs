@@ -3,18 +3,10 @@ import './App.css'
 import { Modal } from './lib/components/Modal'
 
 function App() {
-  const [modalDateIsOpen, setModalDateIsOpen] = useState(false)
-  const [clickedInput, setClickedInput] = useState(null)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  const handleDatePicker = (e) => {
-    setClickedInput(e.target.id)
-    setModalDateIsOpen(true)
-  }
-
-  const submit = (e) => {
-    e.preventDefault()
-    // your logic
-    console.log(inputValue)
+  const handleclick = () => {
+    setModalIsOpen(true)
   }
   return (
     <div className="App">
@@ -32,25 +24,17 @@ function App() {
           Learn React
         </a>
       </header>
-      <form className="test" onSubmit={submit}>
-        <label htmlFor="birthdate">Birthdate</label>
-        <input
-          className="input-field outline-none"
-          type="text"
-          id="dateOfBirth"
-          placeholder="Date of birth"
-          onClick={handleDatePicker}
-        />
 
-        <input type="submit" value="Submit" />
-      </form>
-      {modalDateIsOpen && (
-        <DatePicker
-          setModalDateIsOpen={setModalDateIsOpen}
-          clickedInput={clickedInput}
-        />
-      )}
-      )
+      <main>
+        <h1>Hello world</h1>
+        <button onClick={handleclick}>Click to open modal</button>
+        {modalIsOpen && (
+          <Modal
+            setModalIsOpen={setModalIsOpen}
+            content={<p className="p-content">Modal is open !</p>}
+          />
+        )}
+      </main>
     </div>
   )
 }

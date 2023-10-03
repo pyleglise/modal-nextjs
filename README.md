@@ -5,19 +5,19 @@ A modal component built with Next.js using FontAwesome
 ## Installation
 
 ```
-npm i nextsj-date-picker
+npm i modal-nextjs
 ```
 
 Or :
 
 ```
-yarn add nextsj-date-picker
+yarn add modal-nextjs
 ```
 
 Or :
 
 ```
-pnpm add nextsj-date-picker
+pnpm add modal-nextjs
 ```
 
 ## Importing the css stylesheet
@@ -28,50 +28,28 @@ Import the date picker and his css as shown in the example below :
 ## Example of use
 
 ```js
-import { DatePicker } from 'date-picker-nextjs'
-import 'date-picker-nextjs/dist/components/Datepicker.css'
+import { Modal } from 'modal-nextjs'
+import 'modal-nextjs/dist/components/Modal.css'
 import { useState } from 'react'
 
 const Example = () => {
-  const [modalDateIsOpen, setModalDateIsOpen] = useState(false)
-  const [clickedInput, setClickedInput] = useState(null)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  const handleDatePicker = (e) => {
-    setClickedInput(e.target.id)
-    setModalDateIsOpen(true)
-  }
-
-  const submit = (e) => {
-    e.preventDefault()
-    // your logic
-    console.log(inputValue)
+  const handleclick = () => {
+    setModalIsOpen(true)
   }
 
   return (
-    <form
-      className='test'
-      onSubmit={submit}
-    >
-      <label htmlFor='birthdate'>Birthdate</label>
-      <input
-        className='input-field outline-none'
-        type='text'
-        id='dateOfBirth'
-        placeholder='Date of birth'
-        onClick={handleDatePicker}
-      />
-
-      <input
-        type='submit'
-        value='Submit'
-      />
-    </form>
-    {modalDateIsOpen && (
-        <DatePicker
-          setModalDateIsOpen={setModalDateIsOpen}
-          clickedInput={clickedInput}
+    <main>
+      <h1>Hello world</h1>
+      <button onClick={handleclick}>Click to open modal</button>
+      {modalIsOpen && (
+        <Modal
+          setModalIsOpen={setModalIsOpen}
+          content={<p className="p-content">Modal is open !</p>}
         />
       )}
+    </main>
   )
 }
 
@@ -82,11 +60,7 @@ export default Example
 
 ### props:
 
-`setModalDateIsOpen` : This state function is mandatory and will allow the date picker modal to close itself | _**Required**_
+`setModalIsOpen` : This state function is mandatory and will allow the modal to close itself | _**Required**_
 
-`clickedInput` : The id of the input filed to attach the date picker modal to
+`content` : The React content (HTML/css) to display in the modal
 | _**Required**_
-
-`endYear` : The last year to display. Default : current year | _**Optional**_
-
-`yearCount` : The nomber of years to display. Default : 100 | _**Optional**_
