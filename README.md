@@ -23,7 +23,7 @@ pnpm add modal-nextjs
 ## Importing the css stylesheet
 
 For compatibility purpose with next.js projects, the css stylesheet needs to be imported in your project.
-Import the date picker and his css as shown in the example below :
+Import the modal package and the corresponding css stylesheet as shown in the example below :
 
 ## Example of use
 
