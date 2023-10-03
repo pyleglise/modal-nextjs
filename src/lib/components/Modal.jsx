@@ -1,6 +1,6 @@
 import { faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import utilStyles from '../styles/utils.module.scss'
+
 
 export default function Modal({ setModalIsOpen, content }) {
   const handleClose = () => {
@@ -8,15 +8,15 @@ export default function Modal({ setModalIsOpen, content }) {
   }
   return (
     <div
-      className={utilStyles['darkBG']}
+      className={'darkBG'}
       onClick={(e) => {
-        e.target.className === utilStyles['darkBG'] && setModalIsOpen(false)
+        e.target.className === 'darkBG' && setModalIsOpen(false)
       }}
     >
-      <div className='fixed -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4'>
-        <div className='h-auto w-auto rounded-xl shadow-[0_5px_20px_0] really-dark'>
+      <div className='main-modal-div'>
+        <div className='content-div'>
           <button
-            className='text-bg-color-xlight hover:text-black bg-secondary-color hover:bg-white cursor-pointer font-medium rounded-2xl text-lg absolute right-0 top-0 self-end -mt-3 -mr-3 py-0 px-2 border-0 transition-all duration-[0.25s] ease-[ease] shadow-[0_5px_20px_0_rgba(0,0,0,0.06)]'
+            className='close-button'
             aria-label='Close'
             title='Close'
             onClick={handleClose}

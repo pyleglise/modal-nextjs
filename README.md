@@ -1,6 +1,6 @@
-# Simple Date Picker component created for Next.js projects
+# Simple Modal component created for Next.js projects
 
-A datepicker component built with Next.js using FontAwesome
+A modal component built with Next.js using FontAwesome
 
 ## Installation
 

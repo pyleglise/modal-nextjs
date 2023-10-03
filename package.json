@@ -12,7 +12,7 @@
   "author": "Pierre-Yves Léglise - axialdata",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AxialData/modal-nextjs.git"
+    "url": "git+https://github.com/pyleglise/modal-nextjs.git"
   },
   "keywords": [
     "react",
