@@ -24,7 +24,7 @@
     "readme": "README.md",
     "template": "node_modules/clean-jsdoc-theme",
     "theme_opts": {
-      "default_theme": "light",
+      "default_theme": "dark",
       "title": "modal-nextjs developper Documentation",
       "homepageTitle": "modal-nextjs documentation",
       "footer": "modal-nextjs - Pierre-Yves Léglise - axialdata - 2023",
@@ -39,7 +39,7 @@
         },
         {
           "title": "NPM Package",
-          "link": "https://github.com/pyleglise/modal-nextjs",
+          "link": "https://www.npmjs.com/package/modal-nextjs",
           "target": "_blank"
         }
       ]

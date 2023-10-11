@@ -72,7 +72,7 @@ const useStyles = createUseStyles({
 })
 
 /**
- * Component that displays a modal sith the content in props
+ * Component that displays a modal with the content in props
  *
  * @namespace
  * @component
