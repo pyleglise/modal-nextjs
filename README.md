@@ -20,16 +20,10 @@ Or :
 pnpm add modal-nextjs
 ```
 
-## Importing the css stylesheet
-
-For compatibility purpose with next.js projects, the css stylesheet needs to be imported in your project.
-Import the modal package and the corresponding css stylesheet as shown in the example below :
-
 ## Example of use
 
 ```js
 import { Modal } from 'modal-nextjs'
-import 'modal-nextjs/dist/components/Modal.css'
 import { useState } from 'react'
 
 const Example = () => {
@@ -46,7 +40,11 @@ const Example = () => {
       {modalIsOpen && (
         <Modal
           setModalIsOpen={setModalIsOpen}
-          content={<p className="p-content">Modal is open !</p>}
+          content={
+            <div>
+              <p className="p-class-example">Modal is open !</p>
+            </div>
+          }
         />
       )}
     </main>
