@@ -62,3 +62,11 @@ export default Example
 
 `content` : The React content (HTML/css) to display in the modal
 | _**Required**_
+
+#
+
+### Additional informations:
+
+[Developper documentation](https://pyleglise.github.io/modal-nextjs/)
+
+Author : [Pierre-Yves Léglise](https://github.com/pyleglise/)
