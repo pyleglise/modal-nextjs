@@ -1,7 +1,15 @@
-import logo from './logo.svg'
+// import logo from './logo.svg'
+import { useState } from 'react'
 import './App.css'
-import { Modal } from './lib/components/Modal'
-
+// import { Modal } from 'modal-nextjs'
+import Modal from './lib/components/Modal'
+// import { Modal } from './lib/components/Modal'
+const styles = {
+  'p-content': {
+    padding: '5em',
+    margin: 0,
+  },
+}
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -10,20 +18,7 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
 
       <main>
         <h1>Hello world</h1>
@@ -31,7 +26,7 @@ function App() {
         {modalIsOpen && (
           <Modal
             setModalIsOpen={setModalIsOpen}
-            content={<p className="p-content">Modal is open !</p>}
+            content={<p style={styles['p-content']}>Modal is well open !</p>}
           />
         )}
       </main>
