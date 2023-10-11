@@ -1,3 +1,4 @@
+// eslint-disable-next-line strict
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
