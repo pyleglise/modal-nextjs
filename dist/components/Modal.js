@@ -1,15 +1,22 @@
-// eslint-disable-next-line strict
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Modal;
+exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _reactJss = require("react-jss");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 var _reactFontawesome = require("@fortawesome/react-fontawesome");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/**
+ * CSS definition of the modal /
+ * Using package react-jss
+ *
+ * @namespace
+ * @author  Pierre-Yves Léglise <pleglise@pm.me>
+ * 
+ */
 const useStyles = (0, _reactJss.createUseStyles)({
   "darkBG": {
     "background-color": "rgba(0, 0, 0, 0.2)",
@@ -69,7 +76,48 @@ const useStyles = (0, _reactJss.createUseStyles)({
     "background-color": "#ffffff"
   }
 });
-function Modal(_ref) {
+
+/**
+ * Component that displays a modal with the content in props
+ *
+ * @namespace
+ * @component
+ * @author  Pierre-Yves Léglise <pleglise@pm.me>
+ * @example
+ * import { Modal } from 'modal-nextjs'
+import { useState } from 'react'
+
+const Example = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
+  const handleclick = () => {
+    setModalIsOpen(true)
+  }
+
+  return (
+    <main>
+      <h1>Hello world</h1>
+      <button onClick={handleclick}>Click to open modal</button>
+      {modalIsOpen && (
+        <Modal
+          setModalIsOpen={setModalIsOpen}
+          content={
+            <div>
+              <p className="p-class-example">Modal is open !</p>
+            </div>
+          }
+        />
+      )}
+    </main>
+  )
+}
+
+export default Example
+ * @prop {Object}     setModalIsOpen                 State function used to close the modal.
+ * @prop {String}     content                        Content to display in the modal
+ * @returns {JSX.Element}   A JSX.Element that contains the modal.
+ */
+const Modal = _ref => {
   let {
     setModalIsOpen,
     content
@@ -97,4 +145,5 @@ function Modal(_ref) {
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: styles['text-left']
   }, content))));
-}
+};
+var _default = exports.default = Modal;
